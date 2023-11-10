@@ -10,6 +10,8 @@ import Login from '../autenticacao/src/components/Login.js';
 
 
 const App = () => {
+  const Stack = createStackNavigator();
+
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
