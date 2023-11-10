@@ -5,6 +5,15 @@ import { getAuth, onAuthStateChanged, updateProfile, updateEmail, updatePassword
 const Home = ({ route }) => {
   const { name, email } = route.params;
 
+
+
+  const changeProfile = () => {
+
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+  }
   return (
     
     <View style={styles.container}>
@@ -49,7 +58,14 @@ const Home = ({ route }) => {
               color = { '#f5fffa' }
           />
        
+
+      <View style={styles.button}>
+              <Button title="Alterar Perfil"  c/>
+          </View>
       </View>
+
+
+
     </View>
 
     
