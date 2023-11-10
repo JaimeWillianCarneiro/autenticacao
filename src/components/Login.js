@@ -51,6 +51,7 @@ const Login = () => {
   
           <Text style={styles.label}>Senha</Text>
 
+
           <TextInput
               style={styles.input}
               value={password}
@@ -60,6 +61,8 @@ const Login = () => {
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
           />
+
+
   
           <View style={styles.button}>
               <Button title="Login" onPress={handleLogin} c/>

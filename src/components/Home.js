@@ -1,6 +1,6 @@
 import React from "react";
 import { View,Text, TextInput, Button, StyleSheet, Image  } from "react-native";
-
+import { getAuth, onAuthStateChanged, updateProfile, updateEmail, updatePassword, EmailAuthProvider, reauthenticateWithCredential, signInWithEmailAndPassword } from 'firebase/auth';
 
 const Home = ({ route }) => {
   const { name, email } = route.params;
@@ -15,7 +15,39 @@ const Home = ({ route }) => {
       /> }
     
       <Text style={styles.label}>Nome: {name}</Text>
-      <Text style={styles.label}>Email: {email}</Text>
+      <TextInput
+              style={styles.input}
+              value={name}
+              onChangeText={name}
+              placeholder="Nome"
+              placeholderTextColor= { '#f5fffa' } 
+              color = { '#f5fffa' }
+          />
+       
+      <Text style={styles.label}>Email:</Text>
+      <TextInput
+              style={styles.input}
+              value={email}
+              onChangeText={email}
+              keyboardType="email-address"
+              placeholder="Email"
+              placeholderTextColor= { '#f5fffa' } 
+              color = { '#f5fffa' }
+          />
+
+
+           
+    <Text style={styles.label}>Senha:</Text>
+      <TextInput
+              style={styles.input}
+              value={email}
+              onChangeText={email}
+              secureTextEntry
+              
+              placeholder="Email"
+              placeholderTextColor= { '#f5fffa' } 
+              color = { '#f5fffa' }
+          />
        
       </View>
     </View>
@@ -48,7 +80,8 @@ const styles = StyleSheet.create({
         boxShadowOffset: { width: 1, height: 2 },
         boxShadowOpacity: 0.6,
         boxShadowRadius: 8,
-        elevation: 10
+        elevation: 10, 
+     
     },
 
     infoUser: {
@@ -68,7 +101,20 @@ const styles = StyleSheet.create({
       color: '#D8E3C6',
       fontSize: 14
       
+    }, 
+    input: {
+      backgroundColor: '#514869',
+      width: '90%', 
+      height: 40,
+      borderColor: '#999', 
+      borderWidth: 1,
+      marginBottom: 10,
+      paddingHorizontal: 10,
+      borderRadius: 8, 
+      color: '#d3d3d3', 
+      borderWidth: 0
     }
+
 
 });
 
