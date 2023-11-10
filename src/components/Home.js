@@ -9,11 +9,11 @@ const Home = ({ route }) => {
     
     <View style={styles.container}>
       <View style={styles.perfil}>
-      {/* <Image
-        source={require('react-native-firebase/src/images/3135715.png')}
+      { <Image
+        source={require('autenticacao/src/images/ritaperfil.jpeg')}
         style={styles.logo}
-      /> */}
-      
+      /> }
+    
       <Text style={styles.label}>Nome: {name}</Text>
       <Text style={styles.label}>Email: {email}</Text>
        

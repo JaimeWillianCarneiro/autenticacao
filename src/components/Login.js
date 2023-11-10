@@ -45,8 +45,8 @@ const Login = () => {
               onChangeText={setEmail}
               keyboardType="email-address"
               placeholder="Email"
-              // placeholderTextColor= { '#f5fffa' } 
-              // color = { '#f5fffa' }
+              placeholderTextColor= { '#f5fffa' } 
+              color = { '#f5fffa' }
           />
   
           <Text style={styles.label}>Senha</Text>
@@ -57,8 +57,8 @@ const Login = () => {
               onChangeText={setPassword}
               secureTextEntry
               placeholder="Senha"
-              // placeholderTextColor= { '#f5fffa' } 
-              // color = { '#f5fffa' }
+              placeholderTextColor= { '#f5fffa' } 
+              color = { '#f5fffa' }
           />
   
           <View style={styles.button}>
