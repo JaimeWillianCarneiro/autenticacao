@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
+import { LinearGradient } from 'expo-linear-gradient';
+
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -69,7 +71,8 @@ const Login = () => {
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#201b2c', // Cor de fundo escura
+        // backgroundColor: '#201b2c', // Cor de fundo escura
+        backgroundColor: '#800080', 
         padding: 20, // Espaçamento interno
       },
       
@@ -91,7 +94,7 @@ const Login = () => {
         right: 100,
         fontSize: 16,
         marginBottom: 5,
-        color: '#D8E3C6',
+        color: '#00bfff',
         fontSize: 14
         
       },
@@ -104,7 +107,7 @@ const Login = () => {
         marginBottom: 10,
         paddingHorizontal: 10,
         borderRadius: 8, 
-        color: '#f0ffff94', 
+        color: '#f5fffa', 
         borderWidth: 0 
       },
   
