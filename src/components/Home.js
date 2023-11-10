@@ -64,7 +64,7 @@ const styles = StyleSheet.create({
     label: {
       right: 5,
       fontSize: 16,
-      marginBottom: 5,
+      marginBottom:3 ,
       color: '#D8E3C6',
       fontSize: 14
       

@@ -38,13 +38,15 @@ const Login = () => {
           style={styles.logo}
         />
           <Text style={styles.label}>Email</Text>
+
           <TextInput
               style={styles.input}
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
               placeholder="Email"
-               placeholderTextColor= { '#f5fffa' } color = { '#f5fffa' }
+              placeholderTextColor= { '#f5fffa' } 
+             color = { '#f5fffa' }
           />
   
           <Text style={styles.label}>Senha</Text>
@@ -55,11 +57,12 @@ const Login = () => {
               onChangeText={setPassword}
               secureTextEntry
               placeholder="Senha"
-              placeholderTextColor= { '#f5fffa' } color = { '#f5fffa' }
+              placeholderTextColor= { '#f5fffa' } 
+              color = { '#f5fffa' }
           />
   
           <View style={styles.button}>
-              <Button title="Login" style={styles.button} onPress={handleLogin} color="#00ff88"/>
+              <Button title="Login" style={styles.button} onPress={handleLogin}/>
           </View>
           
         </View>
@@ -125,7 +128,10 @@ const Login = () => {
       logo: {
           width: 150,
           height: 150,
-          marginBottom: 20
+          marginBottom: 20,
+          borderWidth: 5,
+          borderTopLeftRadius: 20,
+          borderTopRightRadius: 20
       }
   });
   
