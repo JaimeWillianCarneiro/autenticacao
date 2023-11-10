@@ -1,19 +1,34 @@
-import React from "react";
+import React,  { useState } from "react";
 import { View,Text, TextInput, Button, StyleSheet, Image  } from "react-native";
 import { getAuth, onAuthStateChanged, updateProfile, updateEmail, updatePassword, EmailAuthProvider, reauthenticateWithCredential, signInWithEmailAndPassword } from 'firebase/auth';
 
 const Home = ({ route }) => {
   const { name, email } = route.params;
+  const [nome, setName] = useState('');
+  const [novoEmail, setEmail] = useState('');
 
 
 
-  const changeProfile = () => {
+  const changeProfile = async () => {
 
     const auth = getAuth();
     const user = auth.currentUser;
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
+
+    // if(name !== "" && name != user.displayName){
+    //     await user.updateProfile(user, {displayName: name});
+
+
+    // };
+    if(email !== "" && email !== user.email){
+    
+      await   user.updateProfile(user,{email: email});
+      ;
   }
+
+
+
+    };
+
   return (
     
     <View style={styles.container}>
@@ -27,40 +42,40 @@ const Home = ({ route }) => {
       <TextInput
               style={styles.input}
               value={name}
-              onChangeText={name}
+              onChangeText={setName}
               placeholder="Nome"
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
           />
        
-      <Text style={styles.label}>Email:</Text>
+      <Text style={styles.label}>Email: {email}</Text>
       <TextInput
               style={styles.input}
               value={email}
-              onChangeText={email}
+              onChangeText={setEmail}
               keyboardType="email-address"
               placeholder="Email"
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
           />
 
-
+{/* 
            
     <Text style={styles.label}>Senha:</Text>
       <TextInput
               style={styles.input}
-              value={email}
+              value={pass}
               onChangeText={email}
               secureTextEntry
               
-              placeholder="Email"
+              placeholder="Senha"
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
           />
-       
+        */}
 
       <View style={styles.button}>
-              <Button title="Alterar Perfil"  c/>
+              <Button title="Alterar Perfil" onPress={changeProfile}   c/>
           </View>
       </View>
 
