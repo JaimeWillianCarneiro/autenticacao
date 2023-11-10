@@ -33,10 +33,10 @@ const Login = () => {
     return (
       <View style={styles.container}>
         <View style={styles.card}>
-        {/* <Image
-          source={require('react-native-firebase/src/images/logo-ifal.png')}
+        <Image
+          source={require('autenticacao/src/images/rita.jpeg')}
           style={styles.logo}
-        /> */}
+        />
           <Text style={styles.label}>Email</Text>
           <TextInput
               style={styles.input}
@@ -44,6 +44,7 @@ const Login = () => {
               onChangeText={setEmail}
               keyboardType="email-address"
               placeholder="Email"
+              placeholderTextColor= { '#f5fffa' } color = { '#f5fffa' }
           />
   
           <Text style={styles.label}>Senha</Text>
@@ -53,6 +54,7 @@ const Login = () => {
               onChangeText={setPassword}
               secureTextEntry
               placeholder="Senha"
+              placeholderTextColor= { '#f5fffa' } color = { '#f5fffa' }
           />
   
           <View style={styles.button}>
@@ -94,7 +96,7 @@ const Login = () => {
         right: 100,
         fontSize: 16,
         marginBottom: 5,
-        color: '#00bfff',
+        color: '#c0c0c0',
         fontSize: 14
         
       },
@@ -107,8 +109,8 @@ const Login = () => {
         marginBottom: 10,
         paddingHorizontal: 10,
         borderRadius: 8, 
-        color: '#f5fffa', 
-        borderWidth: 0 
+        color: '#d3d3d3', 
+        borderWidth: 0
       },
   
       button: {
@@ -116,12 +118,12 @@ const Login = () => {
          marginBottom: 10,
          width: '80%',
          borderRadius: 8,
-         backgroundColor: '#fff'
+         backgroundColor: '#0000cd'
       },
   
       logo: {
-          width: 100,
-          height: 100,
+          width: 150,
+          height: 150,
           marginBottom: 20
       }
   });
