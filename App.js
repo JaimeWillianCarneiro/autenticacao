@@ -6,7 +6,7 @@ import { View } from 'react-native';
 
 import app from '../autenticacao/src/firebase/config.js'; 
 import Login from '../autenticacao/src/components/Login.js';
-// import Home from 'react-native-firebase/src/components/Home.js';
+import Home from '../autenticacao/src/components/Home.js';
 
 
 const App = () => {
@@ -16,7 +16,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={Login} />
-        {/* <Stack.Screen name="Home" component={Home} /> */}
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );

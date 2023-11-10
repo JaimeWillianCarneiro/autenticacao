@@ -44,10 +44,11 @@ const Login = () => {
               onChangeText={setEmail}
               keyboardType="email-address"
               placeholder="Email"
-              placeholderTextColor= { '#f5fffa' } color = { '#f5fffa' }
+               placeholderTextColor= { '#f5fffa' } color = { '#f5fffa' }
           />
   
           <Text style={styles.label}>Senha</Text>
+
           <TextInput
               style={styles.input}
               value={password}
@@ -74,7 +75,7 @@ const Login = () => {
         justifyContent: 'center',
         alignItems: 'center',
         // backgroundColor: '#201b2c', // Cor de fundo escura
-        backgroundColor: '#800080', 
+        backgroundColor: '#cc4200', 
         padding: 20, // Espaçamento interno
       },
       
@@ -85,10 +86,10 @@ const Login = () => {
           alignItems: 'center',
           paddingBottom: 20,
           borderRadius: 20,
-          shadowColor: 'black',
-          shadowOffset: { width: 1, height: 2 },
-          shadowOpacity: 0.6,
-          shadowRadius: 8,
+          boxShadowColor: 'black',
+          boxShadowOffset: { width: 1, height: 2 },
+          boxShadowOpacity: 0.6,
+          boxShadowRadius: 8,
           elevation: 10
       },
   
