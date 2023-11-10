@@ -1,5 +1,5 @@
 import React from "react";
-import { View,Text, TextInput, Button, StyleSheet, Image  } from "react-native-web";
+import { View,Text, TextInput, Button, StyleSheet, Image  } from "react-native";
 
 
 const Home = ({ route }) => {

@@ -45,8 +45,8 @@ const Login = () => {
               onChangeText={setEmail}
               keyboardType="email-address"
               placeholder="Email"
-              placeholderTextColor= { '#f5fffa' } 
-             color = { '#f5fffa' }
+              // placeholderTextColor= { '#f5fffa' } 
+              // color = { '#f5fffa' }
           />
   
           <Text style={styles.label}>Senha</Text>
@@ -57,12 +57,12 @@ const Login = () => {
               onChangeText={setPassword}
               secureTextEntry
               placeholder="Senha"
-              placeholderTextColor= { '#f5fffa' } 
-              color = { '#f5fffa' }
+              // placeholderTextColor= { '#f5fffa' } 
+              // color = { '#f5fffa' }
           />
   
           <View style={styles.button}>
-              <Button title="Login" style={styles.button} onPress={handleLogin}/>
+              <Button title="Login" onPress={handleLogin} c/>
           </View>
           
         </View>
