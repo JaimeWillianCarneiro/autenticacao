@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -44,7 +44,7 @@ const Login = () => {
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
-              placeholder="Email"
+              placeholder= "Email"
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
           />
@@ -63,16 +63,20 @@ const Login = () => {
           />
 
 
-  
-          <View style={styles.button}>
-              <Button title="Login" onPress={handleLogin} c/>
-          </View>
-          
+
+        <View>
+        <TouchableOpacity  
+          style ={styles.TouchableOpacity} onPress= {handleLogin}> 
+          <Text>Login</Text>
+        </TouchableOpacity>
+        </View>
+     
         </View>
         
       </View>
     );
   };
+
   
   const styles = StyleSheet.create({
       container: {
@@ -82,6 +86,7 @@ const Login = () => {
         alignItems: 'center',
         // backgroundColor: '#201b2c', // Cor de fundo escura
         backgroundColor: '#cc4200', 
+        //backgroundColor: '#0000cd',
         padding: 20, // Espaçamento interno
       },
       
@@ -100,24 +105,24 @@ const Login = () => {
       },
   
       label: {
-        right: 100,
+        right: 105,
         fontSize: 16,
         marginBottom: 5,
-        color: '#c0c0c0',
+        color: '#D8E3C6',
         fontSize: 14
         
       },
       input: {
         backgroundColor: '#514869',
-        width: '90%', 
-        height: 40,
-        borderColor: '#999', 
-        borderWidth: 1,
-        marginBottom: 10,
-        paddingHorizontal: 10,
-        borderRadius: 8, 
-        color: '#d3d3d3', 
-        borderWidth: 0
+      width: '90%', 
+      height: 40,
+      borderColor: '#999', 
+      borderWidth: 1,
+      marginBottom: 10,
+      paddingHorizontal: 10,
+      borderRadius: 8, 
+      color: '#f0ffff94', 
+      borderWidth: 0 
       },
   
       button: {
@@ -125,17 +130,31 @@ const Login = () => {
          marginBottom: 10,
          width: '80%',
          borderRadius: 8,
-         backgroundColor: '#0000cd'
+   
+         backgroundColor: '#cc4200'
       },
   
       logo: {
           width: 150,
           height: 150,
           marginBottom: 20,
-          borderWidth: 5,
-          borderTopLeftRadius: 20,
-          borderTopRightRadius: 20
+          //borderWidth: 5,
+          borderRadius: 20, 
+          //borderTopLeftRadius: 20,
+          //borderTopRightRadius: 20
+      }, 
+
+      TouchableOpacity:{
+        marginTop: 20, 
+        marginBottom: 10, 
+        //width: '80%', 
+        borderRadius: 15, 
+        backgroundColor: '#ff0000', 
+        padding: 10
+
+
       }
+
   });
   
   export default Login;
