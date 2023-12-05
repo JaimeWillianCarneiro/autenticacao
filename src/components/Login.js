@@ -70,14 +70,14 @@ const Login = () => {
 
 <TouchableOpacity  
           style ={styles.button} onPress={goToOtherScreen} > 
-          <Text>Não tem conta? </Text>
+          <Text style= {styles.buttonText}>Não tem conta? </Text>
         </TouchableOpacity>
         <View>
 
 
         <TouchableOpacity  
           style ={styles.TouchableOpacity} onPress= {handleLogin}> 
-          <Text>Login</Text>
+          <Text style={styles.inputButton}>Login</Text>
         </TouchableOpacity>
         </View>
      
@@ -141,7 +141,7 @@ const Login = () => {
       button: {
          marginTop: 20,
          marginBottom: 10,
-         width: '80%',
+         width: '90%',
          borderRadius: 8,
         left: 5
          
@@ -164,15 +164,23 @@ const Login = () => {
           width: '80%', 
           borderRadius: 15, 
           backgroundColor: '#ff0000', 
-          padding: 10
+          //padding: 10
+          paddingVertical: 15,
+          paddingHorizontal: 20
   
   
         }, 
-        Redireciona:{
-          marginTop: 20, 
-          marginBottom: 10
+        buttonText: {
+          color: '#FFFFFF', // Cor do texto
+          fontSize: 16,
+          paddingLeft: 150
+          
+        }, 
+        inputButton:{
+          color: '#FFFFFF', // Cor do texto
+          fontSize: 18,
+          fontWeight: 'bold',
         }
-
     
 
   });

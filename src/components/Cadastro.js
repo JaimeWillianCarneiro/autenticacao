@@ -11,7 +11,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 const Cadastro = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-  
+    const [name, setName] = useState('');
+
+
     const navigation = useNavigation();
 
 
@@ -28,6 +30,21 @@ const Cadastro = () => {
           source={require('autenticacao/src/images/rita.jpeg')}
           style={styles.logo}
         />
+
+
+
+
+<Text style={styles.label}>Nome</Text>
+
+<TextInput
+    style={styles.input}
+    value={name}
+    onChangeText = {setName}
+    keyboardType="email-address"
+    placeholder= "Email"
+    placeholderTextColor= { '#f5fffa' } 
+    color = { '#f5fffa' }
+/>
           <Text style={styles.label}>Email</Text>
 
           <TextInput
