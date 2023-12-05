@@ -10,6 +10,11 @@ const Login = () => {
     const [password, setPassword] = useState('');
   
     const navigation = useNavigation();
+
+
+    const goToOtherScreen = () => {
+      navigation.navigate('Cadastro');
+    };
   
     const handleLogin = () => {
   
@@ -42,7 +47,7 @@ const Login = () => {
           <TextInput
               style={styles.input}
               value={email}
-              onChangeText={setEmail}
+              onChangeText = {setEmail}
               keyboardType="email-address"
               placeholder= "Email"
               placeholderTextColor= { '#f5fffa' } 
@@ -63,17 +68,25 @@ const Login = () => {
           />
 
 
-
+<TouchableOpacity  
+          style ={styles.button} onPress={goToOtherScreen} > 
+          <Text>Não tem conta? </Text>
+        </TouchableOpacity>
         <View>
+
+
         <TouchableOpacity  
           style ={styles.TouchableOpacity} onPress= {handleLogin}> 
           <Text>Login</Text>
         </TouchableOpacity>
         </View>
      
+
+  
         </View>
-        
+   
       </View>
+   
     );
   };
 
@@ -130,9 +143,10 @@ const Login = () => {
          marginBottom: 10,
          width: '80%',
          borderRadius: 8,
-   
-         backgroundColor: '#cc4200'
+        left: 5
+         
       },
+
   
       logo: {
           width: 150,
@@ -144,16 +158,22 @@ const Login = () => {
           //borderTopRightRadius: 20
       }, 
 
-      TouchableOpacity:{
-        marginTop: 20, 
-        marginBottom: 10, 
-        //width: '80%', 
-        borderRadius: 15, 
-        backgroundColor: '#ff0000', 
-        padding: 10
+        TouchableOpacity:{
+          marginTop: 20, 
+          marginBottom: 10, 
+          width: '80%', 
+          borderRadius: 15, 
+          backgroundColor: '#ff0000', 
+          padding: 10
+  
+  
+        }, 
+        Redireciona:{
+          marginTop: 20, 
+          marginBottom: 10
+        }
 
-
-      }
+    
 
   });
   

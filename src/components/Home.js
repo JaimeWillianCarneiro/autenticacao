@@ -4,12 +4,12 @@ import { getAuth, onAuthStateChanged, updateProfile, updateEmail, updatePassword
 
 const Home = ({ route }) => {
   const { name, email } = route.params;
-  const [nome, setName] = useState('');
-  const [novoEmail, setEmail] = useState('');
+  const [newName, setNewName] = useState('');
+  const [newEmail, setNewEmail] = useState('');
+  const [newPassword, setNewPassword] = useState('');
 
 
-
-  const changeProfile = async () => {
+  const updateProfile = async () => {
 
     const auth = getAuth();
     const user = auth.currentUser;
@@ -19,12 +19,19 @@ const Home = ({ route }) => {
 
 
     // };
-    if(email !== "" && email !== user.email){
-    
-      await   user.updateProfile(user,{email: email});
-      ;
-  }
+    try{
+      if (newName){
+        await user.updateProfile(newEmail);
+      }
 
+      if (newPassword){
+        await user.updatePassword(newPassword);
+      }
+
+      console.log('Perfil atualizado com sucesso');
+    }catch (error){
+      console.error('Erro ao atualizar perfil:', error.message); 
+    }
 
 
     };
@@ -42,7 +49,7 @@ const Home = ({ route }) => {
       <TextInput
               style={styles.input}
               value={name}
-              onChangeText={setName}
+              onChangeText={(text) => setNewName|(text)}
               placeholder="Nome"
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
@@ -51,8 +58,8 @@ const Home = ({ route }) => {
       <Text style={styles.label}>Email: {email}</Text>
       <TextInput
               style={styles.input}
-              value={email}
-              onChangeText={setEmail}
+              value={newEmail}
+              onChangeText={(text) => setNewEmail(text)}
               keyboardType="email-address"
               placeholder="Email"
               placeholderTextColor= { '#f5fffa' } 
@@ -75,7 +82,7 @@ const Home = ({ route }) => {
         */}
 
       <View style={styles.button}>
-              <Button title="Alterar Perfil" onPress={changeProfile}   c/>
+              <Button title="Alterar Perfil" onPress={updateProfile}   c/>
           </View>
       </View>
 
