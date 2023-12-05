@@ -46,40 +46,12 @@ const Home = ({ route }) => {
       /> }
     
       <Text style={styles.label}>Nome: {name}</Text>
-      <TextInput
-              style={styles.input}
-              value={name}
-              onChangeText={(text) => setNewName|(text)}
-              placeholder="Nome"
-              placeholderTextColor= { '#f5fffa' } 
-              color = { '#f5fffa' }
-          />
+
+   
        
       <Text style={styles.label}>Email: {email}</Text>
-      <TextInput
-              style={styles.input}
-              value={newEmail}
-              onChangeText={(text) => setNewEmail(text)}
-              keyboardType="email-address"
-              placeholder="Email"
-              placeholderTextColor= { '#f5fffa' } 
-              color = { '#f5fffa' }
-          />
+     
 
-{/* 
-           
-    <Text style={styles.label}>Senha:</Text>
-      <TextInput
-              style={styles.input}
-              value={pass}
-              onChangeText={email}
-              secureTextEntry
-              
-              placeholder="Senha"
-              placeholderTextColor= { '#f5fffa' } 
-              color = { '#f5fffa' }
-          />
-        */}
 
       <View style={styles.button}>
               <Button title="Alterar Perfil" onPress={updateProfile}   c/>
@@ -160,7 +132,28 @@ const styles = StyleSheet.create({
 export default Home;
     
 
+/* 
+<TextInput
+style={styles.input}
+value={name}
+onChangeText={(text) => setNewName|(text)}
+placeholder="Nome"
+placeholderTextColor= { '#f5fffa' } 
+color = { '#f5fffa' }
+/>
 
+
+
+ <TextInput
+              style={styles.input}
+              value={newEmail}
+              onChangeText={(text) => setNewEmail(text)}
+              keyboardType="email-address"
+              placeholder="Email"
+              placeholderTextColor= { '#f5fffa' } 
+              color = { '#f5fffa' }
+          />
+*/
 
 
 
