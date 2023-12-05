@@ -40,8 +40,8 @@ const Cadastro = () => {
     style={styles.input}
     value={name}
     onChangeText = {setName}
-    keyboardType="email-address"
-    placeholder= "Email"
+
+    placeholder= "Nome"
     placeholderTextColor= { '#f5fffa' } 
     color = { '#f5fffa' }
 />
@@ -52,7 +52,7 @@ const Cadastro = () => {
               value={email}
               onChangeText = {setEmail}
               keyboardType="email-address"
-              placeholder= "Email"
+              placeholder= "E-mail"
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
           />
