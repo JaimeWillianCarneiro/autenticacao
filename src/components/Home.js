@@ -52,10 +52,6 @@ const Home = ({ route }) => {
       <Text style={styles.label}>Email: {email}</Text>
      
 
-
-      <View style={styles.button}>
-              <Button title="Alterar Perfil" onPress={updateProfile}   c/>
-          </View>
       </View>
 
 
@@ -153,6 +149,14 @@ color = { '#f5fffa' }
               placeholderTextColor= { '#f5fffa' } 
               color = { '#f5fffa' }
           />
+
+
+
+
+
+      <View style={styles.button}>
+              <Button title="Alterar Perfil" onPress={updateProfile}   c/>
+          </View>
 */
 
 

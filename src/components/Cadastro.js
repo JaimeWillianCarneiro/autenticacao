@@ -20,8 +20,27 @@ const Cadastro = () => {
     const goToOtherScreen = () => {
       navigation.navigate('Login');
     };
-  
-    
+
+    const handleSignUp = async () => {
+      try {
+        if (email && password && name) {
+          await auth().createUserWithEmailAndPassword(email, password);
+          Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
+          const user = auth().curr
+
+
+
+
+        } else {
+          Alert.alert('Erro', 'Preencha todos os campos.');
+        }
+      } catch (error) {
+        Alert.alert('Erro', `Erro ao cadastrar: ${error.message}`);
+      }
+    };
+
+
+
   
     return (
       <View style={styles.container}>
