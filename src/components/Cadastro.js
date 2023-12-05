@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { View, Text, TextInput, Button, StyleSheet, Alert, Image, TouchableOpacity } from 'react-native';
+import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -22,13 +22,13 @@ const Cadastro = () => {
     };
 
     const handleSignUp = async () => {
+        const auth = getAuth();
       try {
         if (email && password && name) {
-          await auth().createUserWithEmailAndPassword(email, password);
-        
-          const user = auth().currentUser; 
+            const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
 
-        await user.updateProfile({
+        await updateProfile({
             displayName: name, 
         }); 
 
