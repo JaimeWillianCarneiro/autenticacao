@@ -25,12 +25,14 @@ const Cadastro = () => {
       try {
         if (email && password && name) {
           await auth().createUserWithEmailAndPassword(email, password);
-          Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
-          const user = auth().curr
+        
+          const user = auth().currentUser; 
 
+        await user.updateProfile({
+            displayName: name, 
+        }); 
 
-
-
+        Alert.alert('Sucesso', 'Usuário cadastrado com sucesso!');
         } else {
           Alert.alert('Erro', 'Preencha todos os campos.');
         }
@@ -98,7 +100,7 @@ const Cadastro = () => {
 
 
         <TouchableOpacity  
-          style ={styles.TouchableOpacity} > 
+          style ={styles.TouchableOpacity} onPress= {handleSignUp} > 
           <Text style= {styles.inputButton}>Cadastrar!</Text>
         </TouchableOpacity>
         </View>
