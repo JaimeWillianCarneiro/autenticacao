@@ -18,7 +18,7 @@ const Home = ({ route }) => {
         style={styles.logo}
       /> }
     
-      <Text style={styles.label}>Nome: {name}</Text>
+
 
    
        
