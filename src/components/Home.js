@@ -4,37 +4,10 @@ import { getAuth, onAuthStateChanged, updateProfile, updateEmail, updatePassword
 
 const Home = ({ route }) => {
   const { name, email } = route.params;
-  const [newName, setNewName] = useState('');
-  const [newEmail, setNewEmail] = useState('');
-  const [newPassword, setNewPassword] = useState('');
 
 
-  const updateProfile = async () => {
-
-    const auth = getAuth();
-    const user = auth.currentUser;
-
-    // if(name !== "" && name != user.displayName){
-    //     await user.updateProfile(user, {displayName: name});
 
 
-    // };
-    try{
-      if (newName){
-        await user.updateProfile(newEmail);
-      }
-
-      if (newPassword){
-        await user.updatePassword(newPassword);
-      }
-
-      console.log('Perfil atualizado com sucesso');
-    }catch (error){
-      console.error('Erro ao atualizar perfil:', error.message); 
-    }
-
-
-    };
 
   return (
     
